@@ -7,17 +7,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PomodoroTimer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="400">
+        WindowStyle="None"
+        Title="MainWindow" Height="200" Width="300" Background="#2E2E2E">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock x:Name="timerDisplay" Text="25:00" FontSize="48" HorizontalAlignment="Center" />
-        <TextBlock x:Name="modeDisplay" Text="Work" FontSize="24" HorizontalAlignment="Center" Grid.Row="1" />
-        <Button x:Name="startStopButton" Content="Start" Click="startStopButton_Click" HorizontalAlignment="Center" Grid.Row="2" />
-        <Button x:Name="resetButton" Content="Reset" Click="resetButton_Click" HorizontalAlignment="Center" Grid.Row="3" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- TODO: Add a functional window control bar. -->
+        <TextBlock x:Name="toolBar" Text="x" Grid.ColumnSpan="4" HorizontalAlignment="Right"/>
+        <TextBlock x:Name="timerDisplay" Text="25:00" FontSize="48" FontFamily="Orbitron" HorizontalAlignment="Center"
+                   Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1"/>
+        <TextBlock x:Name="modeDisplay" Text="Work" FontSize="24" HorizontalAlignment="Center" Grid.Row="2"
+                   Grid.Column="0" Grid.ColumnSpan="4"/>
+        <Button x:Name="startStopButton" Content="Start" Click="startStopButton_Click" HorizontalAlignment="Center"
+                Grid.Row="3" Grid.Column="1" Style="{DynamicResource RoundedButton}" Width="70"/>
+        <Button x:Name="resetButton" Content="Reset" Click="resetButton_Click" HorizontalAlignment="Center"
+                Grid.Row="3" Grid.Column="2" Style="{DynamicResource RoundedButton}" Width="70"/>
     </Grid>
 </Window>
