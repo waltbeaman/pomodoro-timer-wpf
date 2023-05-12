@@ -88,5 +88,13 @@ namespace PomodoroTimer
             int seconds = timeRemaining % 60;
             timerDisplay.Text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+
+        private void MenuBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
     }
 }
