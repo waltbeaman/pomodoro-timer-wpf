@@ -22,7 +22,7 @@ namespace PomodoroTimer.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace PomodoroTimer.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PomodoroTimer.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace PomodoroTimer.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace PomodoroTimer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream bell {
+        public static System.IO.UnmanagedMemoryStream bell {
             get {
                 return ResourceManager.GetStream("bell", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace PomodoroTimer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close_button {
+        public static System.Drawing.Bitmap close_button {
             get {
                 object obj = ResourceManager.GetObject("close_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -82,7 +82,7 @@ namespace PomodoroTimer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap maximize_button {
+        public static System.Drawing.Bitmap maximize_button {
             get {
                 object obj = ResourceManager.GetObject("maximize_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -92,7 +92,7 @@ namespace PomodoroTimer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minimize_button {
+        public static System.Drawing.Bitmap minimize_button {
             get {
                 object obj = ResourceManager.GetObject("minimize_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

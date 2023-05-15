@@ -20,7 +20,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -57,9 +57,11 @@
                 <ColumnDefinition Width="*" /> <!-- 10 -->
                 <ColumnDefinition Width="5" /> <!-- 11 -->
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="8" Source="/Resources/minimize_button.png" Margin="2"/>
-            <Image Grid.Column="9" Source="/Resources/maximize_button.png" Margin="2"/>
-            <Image Grid.Column="10" Source="/Resources/close_button.png" Margin="2"/>
+            <Image x:Name="MinimizeButton" Grid.Column="9" Source="pack://application:,,,/Resources/minimize_button.png"
+                   Margin="2" MouseDown="MinimizeButton_Click"/>
+            <!--<Image Grid.Column="9" Source="pack://application:,,,/Resources/maximize_button.png" Margin="2"/>-->
+            <Image x:Name="CloseButton" Grid.Column="10" Source="pack://application:,,,/Resources/close_button.png"
+                   Margin="2" MouseDown="CloseButton_Click"/>
         </Grid>
         <TextBlock x:Name="timerDisplay" Text="25:00" FontSize="48" FontFamily="Orbitron" HorizontalAlignment="Center"
                    Grid.Column="1" Grid.ColumnSpan="10" Grid.Row="2"/>

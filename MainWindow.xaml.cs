@@ -96,5 +96,15 @@ namespace PomodoroTimer
                 DragMove();
             }
         }
+
+        private void CloseButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+
+        private void MinimizeButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }
