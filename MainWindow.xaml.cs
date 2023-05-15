@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace PomodoroTimer
@@ -22,71 +11,71 @@ namespace PomodoroTimer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool timerRunning = false;
-        private bool workMode = true;
-        private int workTime = 25 * 60; // 25 minutes of work
-        private int breakTime = 5 * 60; // 5 minutes of break
-        private int timeRemaining;
-        private DispatcherTimer timer;
+        private bool _timerRunning = false;
+        private bool _workMode = true;
+        private int _workTime = 25 * 60; // 25 minutes of work
+        private int _breakTime = 5 * 60; // 5 minutes of break
+        private int _timeRemaining;
+        private DispatcherTimer _timer;
 
         public MainWindow()
         {
             InitializeComponent();
-            timeRemaining = workTime;
+            _timeRemaining = _workTime;
             UpdateTimerDisplay();
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += Timer_Tick;
 
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            timeRemaining--;
-            if (timeRemaining <= 0)
+            _timeRemaining--;
+            if (_timeRemaining <= 0)
             {
-                timer.Stop();
-                timeRemaining = workMode ? breakTime : workTime;
-                workMode = !workMode;
-                modeDisplay.Text = workMode ? "Work" : "Break";
+                _timer.Stop();
+                _timeRemaining = _workMode ? _breakTime : _workTime;
+                _workMode = !_workMode;
+                modeDisplay.Text = _workMode ? "WORK" : "BREAK";
                 SoundPlayer player = new SoundPlayer(Properties.Resources.bell);
                 player.Play();
             }
             UpdateTimerDisplay();
         }
 
-        private void startStopButton_Click (object sender, RoutedEventArgs e)
+        private void StartStopButton_Click (object sender, RoutedEventArgs e)
         {
-            if (timerRunning)
+            if (_timerRunning)
             {
-                timerRunning = false;
-                timer.Stop();
-                startStopButton.Content = "Start";
+                _timerRunning = false;
+                _timer.Stop();
+                StartStopButton.Content = "START";
             }
             else
             {
-                timerRunning = true;
-                timer.Start();
-                startStopButton.Content = "Stop";
+                _timerRunning = true;
+                _timer.Start();
+                StartStopButton.Content = "STOP";
             }
         }
 
-        private void resetButton_Click(object sender, RoutedEventArgs e)
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
-            timerRunning = false;
-            timer.Stop();
-            workMode = true;
-            timeRemaining = workTime;
+            _timerRunning = false;
+            _timer.Stop();
+            _workMode = true;
+            _timeRemaining = _workTime;
             UpdateTimerDisplay();
-            modeDisplay.Text = "Work";
-            startStopButton.Content = "Start";
+            modeDisplay.Text = "WORK";
+            StartStopButton.Content = "START";
         }
 
         private void UpdateTimerDisplay()
         {
-            int minutes = timeRemaining / 60;
-            int seconds = timeRemaining % 60;
-            timerDisplay.Text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            int minutes = _timeRemaining / 60;
+            int seconds = _timeRemaining % 60;
+            TimerDisplay.Text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
 
         private void MenuBar_MouseDown(object sender, MouseButtonEventArgs e)
