@@ -82,19 +82,29 @@ namespace PomodoroTimer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap maximize_button {
+        public static System.Drawing.Bitmap minimize_button {
             get {
-                object obj = ResourceManager.GetObject("maximize_button", resourceCulture);
+                object obj = ResourceManager.GetObject("minimize_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon pomodoro {
+            get {
+                object obj = ResourceManager.GetObject("pomodoro", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap minimize_button {
+        public static System.Drawing.Bitmap pomodoro1 {
             get {
-                object obj = ResourceManager.GetObject("minimize_button", resourceCulture);
+                object obj = ResourceManager.GetObject("pomodoro1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

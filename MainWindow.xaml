@@ -61,9 +61,10 @@
                     <ColumnDefinition Width="*" /><!-- 10 -->
                     <ColumnDefinition Width="5" /><!-- 11 -->
                 </Grid.ColumnDefinitions>
+                <Image x:Name="PomodoroIcon" Grid.Column="1" Source="pack://application:,,,/Resources/pomodoro.png"
+                       Margin="2"/>
                 <Image x:Name="MinimizeButton" Grid.Column="9" Source="pack://application:,,,/Resources/minimize_button.png"
                        Margin="2" MouseDown="MinimizeButton_Click"/>
-                <!--<Image Grid.Column="9" Source="pack://application:,,,/Resources/maximize_button.png" Margin="2"/>-->
                 <Image x:Name="CloseButton" Grid.Column="10" Source="pack://application:,,,/Resources/close_button.png"
                        Margin="2" MouseDown="CloseButton_Click"/>
             </Grid>
